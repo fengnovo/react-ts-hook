@@ -1,7 +1,10 @@
-const axios = require('axios')
+import axios from "axios"
+
+// const axios = require('axios')
 
 interface User {
   name: string
+  repos: Repo[]
 }
 
 interface Repo {
@@ -16,7 +19,7 @@ type RepoResponse = {
   data: Repo[]
 }
 
-class GithubServer {
+export default class GithubServer {
   userName: string
   constructor(userName:string) {
     this.userName = userName
@@ -31,8 +34,4 @@ class GithubServer {
       headers: {'content-type': 'application/json;charset=UTF-8'}
     })
   }
-}
-
-exports.module = {
-  GithubServer
 }
