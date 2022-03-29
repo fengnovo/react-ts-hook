@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface User {
-  [k: string]: any
+  [k: string]: string | Repo[]
 }
 
 interface Repo {
@@ -31,14 +31,14 @@ function App() {
     <div className="App">
       {
         Object.keys(user).map(key => <div key={key}>
-        <span>{key}:</span>
+        <span style={{width: 30}}>{key}:</span>
         <span>{user[key]}</span>
         </div>)
       }
       <hr />
       {
         repos.map((repo: Repo) => <div key={repo.id}>
-        <span>{repo.name}:</span>
+        <span style={{width: 30}}>{repo.name}:</span>
         <span>{repo.description}</span>
         </div>)
       }
