@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import * as App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App.Data />
+    <hr />
+    <App.ContextContainer />
+    <hr />
+    <App.HOC1 />
+    <hr />
   </React.StrictMode>,
   document.getElementById('root')
 );
